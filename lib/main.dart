@@ -79,7 +79,7 @@ class _home extends StatelessWidget {
                     width: 10.0,
                   ),
                   Text(
-                    '+90 535 535 55 66',
+                    '+90 555 555 55 55',
                     style: TextStyle(
                         color: Colors.amber, fontWeight: FontWeight.bold),
                   ),
