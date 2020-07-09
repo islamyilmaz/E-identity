@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: _home(),
+      home: _Home(),
     ));
 
-class _home extends StatelessWidget {
+class _Home extends StatefulWidget {
+  @override
+  __HomeState createState() => __HomeState();
+}
+
+class __HomeState extends State<_Home> {
+  int playerLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +21,15 @@ class _home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.grey[850],
         ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              setState(() {
+                playerLevel++;
+              });
+            },
+            child: Icon(Icons.add),
+            tooltip: 'Tap to level up',
+            backgroundColor: Colors.grey),
         body: Padding(
           padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
           child: Column(
@@ -24,14 +40,14 @@ class _home extends StatelessWidget {
                 backgroundColor: Colors.amber,
                 radius: 55,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/avatar1.png"),
+                  backgroundImage: AssetImage('assets/avatar1.png'),
                   radius: 50.0,
                 ),
               ),
               SizedBox(
                 height: 10.0,
               ),
-              Text('Lv: 99 [GM]',
+              Text('Lv: ' + '$playerLevel',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.amber)),
               SizedBox(height: 10.0),
@@ -60,26 +76,6 @@ class _home extends StatelessWidget {
                   ),
                   Text(
                     'islamyilmaz@yahoo.com',
-                    style: TextStyle(
-                        color: Colors.amber, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    Icons.phone,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    '+90 555 555 55 55',
                     style: TextStyle(
                         color: Colors.amber, fontWeight: FontWeight.bold),
                   ),
